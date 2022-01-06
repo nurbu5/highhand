@@ -2,7 +2,7 @@ require_relative '../hand.rb'
 
 describe Hand do
   describe '#description' do
-    it 'should properly describe a hand with two cards' do
+    it 'properly describes a hand with two cards' do
       hand = Hand.new
 
       hand.add_card({suit: "hearts", rank: 10})
@@ -11,7 +11,7 @@ describe Hand do
       expect(hand.description).to eq("10 of hearts, 2 of spades")
     end
 
-    it 'should properly describe a hand containing an Ace and face card' do
+    it 'properly describes a hand containing an Ace and face card' do
       hand = Hand.new
 
       hand.add_card({suit: "diamonds", rank: 1})
@@ -22,7 +22,7 @@ describe Hand do
   end
 
   describe '#score' do
-    it 'should properly calculate the score of a hand with two cards' do
+    it 'correctly calculates the score of a hand with two cards' do
       hand = Hand.new
 
       hand.add_card({suit: "hearts", rank: 10})
@@ -31,7 +31,7 @@ describe Hand do
       expect(hand.score).to eq(12)
     end
 
-    it 'should properly calculate the score of a hand containing an Ace and a face card' do
+    it 'correctly calculates the score of a hand containing an Ace and a face card' do
       hand = Hand.new
 
       hand.add_card({suit: "diamonds", rank: 1})
