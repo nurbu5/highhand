@@ -12,9 +12,10 @@ class Deck
     7 => "7",
     8 => "8",
     9 => "9",
-    10 => "Jack",
-    11 => "Queen",
-    12 => "King"
+    10 => "10",
+    11 => "Jack",
+    12 => "Queen",
+    13 => "King"
   }
 
   def initialize
@@ -30,8 +31,8 @@ class Deck
   def deal(num_hands)
     hands = Array.new(num_hands).map { |h| Hand.new }
     2.times do
-      num_hands.times do
-        Hand.add_card(draw_card)
+      hands.each do |hand|
+        hand.add_card(draw_card)
       end
     end
     hands
@@ -39,12 +40,12 @@ class Deck
 
   def draw_card
     card = card_for(cards[deck_position])
-    deck_position++
+    @deck_position += 1
     card
   end
 
   private
-  attr_accessor :cards, :deck_position
+  attr_reader :cards, :deck_position
 
   def card_for(val)
     suit = SUITS[val / 13]
@@ -53,10 +54,10 @@ class Deck
   end
 
   def shuffle
-    @cards.shuffle
+    @cards = cards.shuffle
   end
 
   def reset
-    deck_position = 0
+    @deck_position = 0
   end
 end

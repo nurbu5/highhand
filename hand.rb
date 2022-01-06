@@ -15,8 +15,8 @@ class Hand
 
   def description
     cards.map do |card|
-      "#{Deck.RANKS[card[:rank]]} of #{card[:suit]}"
-    end.join(" ")
+      "#{Deck::RANKS[card[:rank]]} of #{card[:suit]}"
+    end.join(", ")
   end
 
   private
