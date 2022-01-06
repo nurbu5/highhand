@@ -1,6 +1,6 @@
-#Card Game Exercise
+# Card Game Exercise
 
-##Rules
+## Rules
 
 - There is 1 dealer
 - There are 5 players
@@ -11,7 +11,7 @@
 - The highest hand wins
 - The winner is announced at the end of each hand
 
-###NOTE:
+### NOTE:
 I assumed the following mapping for card rank:
 - Ace: 1
 - 2-10: 2-10
@@ -19,15 +19,15 @@ I assumed the following mapping for card rank:
 - Queen: 12
 - King: 13
 
-##How to play
+## How to play
 
 Run:
 ruby play.rb
 
-##How to run a test file
+## How to run a test file
 
 Run:
 rspec spec/SPECFILENAME.rb
 
-##Ruby version used
+## Ruby version used
 ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
