@@ -1,3 +1,4 @@
+require_relative 'game.rb'
 
 class Interface
   NEW_ROUND_INTRO = "Starting a new round\n"
@@ -5,11 +6,12 @@ class Interface
 
   def initialize
     @continue_playing = true
-    #@game = Game.new
+    @game = Game.new
   end
 
   def play_round
     puts NEW_ROUND_INTRO
+    game.new_round
     show_hands
     announce_winner
     request_new_round
@@ -23,11 +25,12 @@ class Interface
   attr_reader :game
 
   def show_hands
-    #game.show_hands
+    puts game.hand_descriptions
   end
 
   def announce_winner
-    #game.announce_winner
+    puts "#{game.winner} won, with a score of #{game.winning_score}!\n"\
+         "which means the #{'dealer' ? 'players' : game.dealer_won} won!"
   end
 
   def request_new_round
