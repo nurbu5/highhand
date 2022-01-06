@@ -2,6 +2,20 @@ require_relative 'hand.rb'
 
 class Deck
   SUITS = [ "hearts", "spades", "diamonds", "clubs" ].freeze
+  RANKS = {
+    1 => "Ace",
+    2 => "2",
+    3 => "3",
+    4 => "4",
+    5 => "5",
+    6 => "6",
+    7 => "7",
+    8 => "8",
+    9 => "9",
+    10 => "Jack",
+    11 => "Queen",
+    12 => "King"
+  }
 
   def initialize
     @deck_position = 0
